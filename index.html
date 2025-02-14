@@ -52,7 +52,7 @@
             flex-direction: column;
             gap: 1px;
             align-items: center;
-            top:3;
+            top:4;
         }
         #countdown-label {
             color: crimson;
@@ -111,7 +111,7 @@
                 display.innerHTML = `${days}:${hours}:${mins}:${secs}`;
             } else {
                 label.innerHTML = "";
-                display.innerHTML = `<span class="birthday-message">HAPPY BIRTHDAY SAPNA!!! <br> 🎉🎂</span>`;
+                display.innerHTML = `<span class="birthday-message">HAPPY BIRTHDAY SAPNA!!! 🎉🎂</span>`;
                 document.getElementById("hover-btn").style.display = "block";
                 clearInterval(timer);
             }
