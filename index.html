@@ -99,7 +99,7 @@
         const label = document.getElementById("countdown-label");
         function Countdown() {
             const now = new Date().getTime();
-            const birthday = new Date("February 15, 2025 00:00:00").getTime();
+            const birthday = new Date("February 14, 2025 00:00:00").getTime();
             const timeLeft = birthday - now;
             if (timeLeft > 0) {
                 const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24)).toString().padStart(2, "0");
