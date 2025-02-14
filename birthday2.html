@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maybe okay will be our website</title>
+</head>
+<body>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            height: 100vh;
+            background: url('/Users/imss/Downloads/sky-pic.jpeg') no-repeat center center fixed;
+        }
+        .button2 {
+            font-family: cursive;
+            font-weight: bold;
+            font-size: 25px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #ff69b4;
+            color: white;
+            cursor: pointer;
+            position: relative;
+            transition: 0.3s;
+            height: 100px;
+            width: 500px;
+            border-radius: 20px;
+        }
+        .button2:hover{
+            padding: 15px;
+            background-color: hsl(330, 100%, 51%);
+        }
+        .hover-btn {
+            font-family: cursive;
+            font-weight: bold;
+            font-size: 25px;
+            padding: 10px 20px;
+            border: none;
+            background-color: hsl(330, 100%, 71%);
+            color: white;
+            cursor: pointer;
+            position: relative;
+            transition: 0.3s;
+            height: 100px;
+            width: 500px;
+            border-radius: 20px;
+        }
+        .hover-btn:hover {
+            color: transparent;
+            background-color: hsl(330, 100%, 51%);
+        }
+        .hover-btn:hover::after {
+            content: "(AND ME!!!!)";
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+            position: absolute;
+            left: 50%;
+            top: 25%;
+            bottom: 20%;
+            transform: translateX(-50%);
+        }
+        .img1{
+            align-items: top;
+            width: 300px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .img2{
+            align-items: top;
+            width: 300px;
+            height: 400px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column; 
+            gap: 15px;
+            align-items: center; 
+        }
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+        .content {
+            font-family: fantasy;
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .quotes {
+            font-family: serif;
+            font-size: 50px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: transparent;
+        }
+        .quotes:hover{
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
+    <button class="quotes" onclick="window.location.href='birthday5.html'">Quotes</button>
+    <img src = "/Users/imss/Downloads/pg2img1.jpeg" alt="img1" class="img1">
+    <div class="content-wrapper">
+        <p class="content">
+            Happy birthday Spananaaaaa!!! <br>
+            Since so many of us feel bad for you being so old and yet so short, we all made you birthday wishes. 
+        </p>
+        <div class="button-container">
+            <button class="hover-btn" onclick="window.location.href='birthday3.html'">Your family -></button>
+            <button class="button2" onclick="window.location.href='birthday4.html'">Your friends -></button>
+        </div>
+    </div>    
+    <img src = "/Users/imss/Downloads/pg2img2.jpeg" alt="img2" class="img2">
+</body>
+</html>

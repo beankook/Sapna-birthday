@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maybe okay will be our website</title>
+    <style>
+        body {
+            background-color: #64FFDA;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .quote-button {
+            position: absolute;
+            width: 90%;
+            height: 50vh;
+            background-color: white;
+            border: none;
+            font-size: 1.2rem;
+            font-family: serif;
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            overflow-y: auto;
+            white-space: pre-wrap; /* Preserves line breaks */
+        }
+        .quote-button a {
+            display: block;
+            margin-top: 10px;
+            font-size: 1rem;
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <button class="quote-button" id="quote"></button>
+    <script>
+        const quotes = [
+            { text: "I cannot make speeches, Sapna...If I loved you less, I might be able to talk about it more. But you know what I am. You hear nothing but truth from me.", link: "https://www.wattpad.com/story/6638276-emma-1815", title: "Jane Austen, Emma" },
+            { text: "“Name one CSE major who was happy.”\n  “You can’t.”\n “I can’t.”\n “I know. They never let you be an CSE major and happy.”\n “I’ll tell you a secret.”\n “Tell me.”\n “I’m going to be the first.”\n “Swear it.”\n “Why me?”\n “Because you’re the reason.\n Swear it.”\n...\n“I feel like I could eat the world raw.”", link: "https://dn720006.ca.archive.org/0/items/sq_20211001/the-song-books.yossr.com%29.pdf", title: "Madeline Miller, The Song Of Achilles" },
+            { text: "I would know you in death, at the end of the world.", link: "https://dn720006.ca.archive.org/0/items/sq_20211001/the-song-books.yossr.com%29.pdf", title: "Madeline Miller, The Song Of Achilles" },
+            { text: "“If there are all different types of soul mates,” I told Harry one afternoon, when the two of us were sitting out on the patio with Connor, “then you are one of mine.” Harry was wearing a pair of shorts and no shirt. Connor was lying on his chest. He hadn’t shaved that morning, and his stubble was coming in. It had just the slightest gray patch under his chin. Looking at him with her, I realized how much they looked alike. Same long lashes, same pert lips. Harry held Connor to his chest with one hand and grabbed my free hand with the other. “I am absolutely positive that I need you more than I’ve ever needed another living soul,” he said. “The only exception being—” “Connor,” I said. We both smiled. For the rest of our lives, we would say that. The only exception to absolutely everything was Connor.”", link: "https://oceanofpdf.com.co/the-seven-husbands-of-evelyn-hugo-by-taylor-jenkins-reid-epub-pdf/", title: "Taylor Jenkins Reid, The Seven Husbands of Evelyn Hugo" },
+            { text: "I'm only up when you're not down,\n Don't wanna fly if you're still on the ground,\n It's like no matter what I do,\n Well, you drive me crazy half the time,\n The other half I'm only trying,\n To let you know that what I feel is true, \nAnd I'm only me when I'm with you", link: "https://www.youtube.com/watch?v=AlTfYj7q5gQ", title: "Taylor Swift, I'm Only Me When I'm With You" },
+            { text: "Light pink sky up on the roof, \nSun sinks down, no curfew \nTwenty questions, we tell the truth, \nYou've been stressed out lately? Yeah, me too", link: "https://www.youtube.com/watch?v=eaP1VswBF28", title: "Taylor Swift, It's Nice To Have A Friend" },
+            { text: "And isn't it just so pretty to think,\n All along there was some, \nInvisible string tying you to me?", link: "https://www.youtube.com/watch?v=OuFnpmGwg5k", title: "Taylor Swift, Invisible String" },
+            { text: "Take me to the lakes where all the poets went to die, \nI don't belong, and my beloved, neither do you, \nThose Windermere peaks look like a perfect place to cry, \nI'm setting off, but not without my muse, \nNo, not without you", link: "https://www.youtube.com/watch?v=tOHcAc3r2kw", title: "Taylor Swift, The Lakes" },
+            { text: "Time flies, messy as the mud on your truck tires\nNow I'm missing your smile, hear me out\nWe could just ride around\nAnd the road not taken looks real good now\nAnd it always leads to you in my hometown", link: "https://youtu.be/WuvhOD-mP8M?si=0EVX0MYjQWhc9omO", title: "Taylor Swift, 'tis the damn season" },
+            { text: "You're the only soul who can tell which smiles I'm faking, \nAnd the heart I know I'm breaking is my own, \nTo leave the warmest hug I've ever known", link: "https://youtu.be/WuvhOD-mP8M?si=0EVX0MYjQWhc9omO", title: "Taylor Swift, 'tis the damn season" }
+        ];
+
+        let index = 0;
+        const button = document.getElementById("quote");
+
+        function showNextQuote() {
+            button.style.opacity = "0";
+            setTimeout(() => {
+                button.innerHTML = `${quotes[index].text.replace(/\n/g, "<br>")} <br><a href="${quotes[index].link}" target="_blank">${quotes[index].title}</a>`;
+                button.style.opacity = "1";
+                index = (index + 1) % quotes.length;
+            }, 1000);
+        }
+
+        button.onclick = showNextQuote;
+        showNextQuote();
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maybe okay will be our website</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            background-color: #64FFDA;
+        }
+        .media-container {
+            position: absolute;
+            left: 0;
+            width: 600px;
+            height: 338px;
+        }
+        .media-container img, .media-container video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 1s ease-in-out;
+        }
+        .media-container video {
+            opacity: 0;
+        }
+        .media-container2 {
+            position: absolute;
+            right: 0;
+            top: 500px;
+            width: 600px;
+            height: 338px;
+        }
+        .media-container2 img, .media-container video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 1s ease-in-out;
+        }
+        .hover-img img:hover {
+            transform: scale(1.05); /* Slight bulge effect */
+            filter: brightness(1.2) drop-shadow(0 0 15px rgba(255, 255, 255, 0.5)); /* Glow effect */
+        }
+        .media-container2 video {
+            opacity: 0;
+        }
+        .text1{
+            font-family: cursive;
+            position: absolute;
+            top: 100px;
+            right: 200px;
+        }
+        .text2{
+            font-family: cursive;
+            position: absolute;
+            top: 600px;
+            left: 100px;
+        }
+        .media-container3 {
+            position: absolute;
+            left: 0;
+            top: 1000px;
+            width: 600px;
+            height: 338px;
+        }
+        .media-container3 img, .media-container video {
+            position: absolute;
+            width: 90%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 1s ease-in-out;
+        }
+        .media-container3 video {
+            opacity: 0;
+        }
+        .text3{
+            font-family: cursive;
+            position: absolute;
+            top: 1100px;
+            right: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text1">Smita Aunty</h1>
+    <div class="media-container hover-img" onclick="fadeToVideo('video1', 'image1')">
+        <img id="image1" src="/Users/imss/Downloads/smita-aunty-photo.jpeg">
+        <video id="video1" controls>
+            <source src="/Users/imss/Downloads/smita-aunty-video.mp4" type="video/mp4">
+        </video>
+    </div>
+    <h1 class="text2">Samarth and Sudhir Uncle</h1>
+    <div class="media-container2 hover-img" onclick="fadeToVideo('video2', 'image2')">
+        <img id="image2" src="/Users/imss/Downloads/family-photo.jpeg">
+        <video id="video2" controls>
+            <source src="/Users/imss/Downloads/samarth-and-sudhir-uncle-video.mp4" type="video/mp4">
+        </video>
+    </div>
+    <h1 class="text3">It's me. Hi. I'm the problem, it's me.</h1>
+    <div class="media-container3 hover-img" onclick="fadeToVideo('video3', 'image3')">
+        <img id="image3" src="/Users/imss/Downloads/my-photo.jpeg">
+        <video id="video3" controls>
+            <source src="/Users/imss/Downloads/my-video.mp4" type="video/mp4">
+        </video>
+    </div>
+    <script>
+        function fadeToVideo(videoId, imageId) {
+            const image = document.getElementById(imageId);
+            const video = document.getElementById(videoId);
+            image.style.opacity = "0";
+            setTimeout(() => {
+                image.style.display = "none";
+                video.style.opacity = "1";
+                video.play();
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
